@@ -1,0 +1,34 @@
+<div class="form">
+  <%= form_for(kitten) do |form| %>
+  <%= render "error_messages", resource: kitten %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+  </div>  
+  <div>
+    <%= form.label :age %><br>
+    <%= form.number_field :age, in: 1..100 %><br>
+  </div>
+  <div>     
+      <%= form.label "Cuteness rate" %><br>
+        <%= form.radio_button :cuteness, 1 %>
+        <%= form.label :cuteness_num, "1" %>
+        <%= form.radio_button :cuteness, 2 %>
+        <%= form.label :cuteness_num, "2" %>
+        <%= form.radio_button :cuteness, 3 %>
+        <%= form.label :cuteness_num, "3" %><br>
+  </div>
+  <div>
+    <%= form.label "Softness rate" %><br>
+        <%= form.radio_button :softness, 1 %>
+        <%= form.label :softness_num, "1" %>
+        <%= form.radio_button :softness, 2 %>
+        <%= form.label :softness_num, "2" %>
+        <%= form.radio_button :softness, 3 %>
+        <%= form.label :softness_num, "3" %>
+  </div>
+  <div>
+    <br><%= form.submit %><br>
+  </div>
+  <% end %>
+</div>

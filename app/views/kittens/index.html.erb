@@ -1,0 +1,9 @@
+<h1>Kittens</h1>
+<%= link_to "Create new Kitty", new_kitten_path%><br>
+<p>_________________________________________________<p>
+<% @kittens.each do |kitty| %>
+  <%= link_to "#{kitty.name}", kitten_path(kitty.id) %><br>
+  <%= link_to "Delete", kitten_path(kitty.id), method: :delete, data: { confirm: "Are you sure?" }%>
+  <p>_________________________________________________<p><br>
+<% end %>
+<br>
